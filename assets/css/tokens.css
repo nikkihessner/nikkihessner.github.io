@@ -1,0 +1,93 @@
+:root{
+    /* Layout */
+    --page-max: 74rem;
+    --content-max: 42rem;
+    --gutter: clamp(1rem, 4vw, 2rem);
+  
+    /* Type */
+    --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+    --text: clamp(1rem, 0.3vw + 0.95rem, 1.125rem);
+    --lh: 1.65;
+  
+    --h1: clamp(2rem, 3.2vw + 1.2rem, 3rem);
+    --h2: clamp(1.4rem, 1.4vw + 1.1rem, 1.9rem);
+    --h3: clamp(1.15rem, 0.8vw + 1.05rem, 1.35rem);
+    --small: 0.925rem;
+  
+    /* Spacing */
+    --s1: 0.5rem;
+    --s2: 0.75rem;
+    --s3: 1rem;
+    --s4: 1.5rem;
+    --s5: 2rem;
+    --s6: 3rem;
+  
+    /* Radius / shadow (calm) */
+    --r: 0.9rem;
+    --r-sm: 0.6rem;
+    --shadow: 0 10px 24px rgba(20, 12, 34, 0.08);
+    --shadow-sm: 0 8px 18px rgba(20, 12, 34, 0.07);
+  
+    /* Calm studio + lilac accents */
+    --accent-1: #a78bfa; /* lilac */
+    --accent-2: #93c5fd; /* powder blue */
+    --accent-3: #86efac; /* soft mint */
+    --accent-4: #fdba74; /* apricot */
+    --accent-5: #fda4af; /* blush */
+  
+    --link: #7c3aed;
+    --link-visited: #6d28d9;
+  
+    --bg: #fbfafc;
+    --panel: #ffffff;
+    --text-color: #15171a;
+    --muted: #5c5f6a;
+    --border: rgba(20, 12, 34, 0.12);
+  
+    /* Soft wash */
+    --soft: rgba(124, 58, 237, 0.07);
+  
+    --accent-grad: linear-gradient(135deg,
+      color-mix(in oklab, var(--accent-1) 65%, white 35%),
+      color-mix(in oklab, var(--accent-2) 55%, white 45%),
+      color-mix(in oklab, var(--accent-3) 45%, white 55%)
+    );
+  
+    /* Callouts */
+    --info-bg: rgba(124, 58, 237, 0.08);
+    --warn-bg: rgba(251, 146, 60, 0.12);
+    --idea-bg: rgba(16, 185, 129, 0.10);
+  
+    /* Code */
+    --code-bg: rgba(20, 12, 34, 0.05);
+    --code-border: rgba(20, 12, 34, 0.10);
+  
+    /* Focus ring */
+    --ring: 0 0 0 3px color-mix(in oklab, var(--accent-1) 35%, transparent);
+  }
+  
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: #0e0b14;
+      --panel: #141022;
+      --text-color: #efeafd;
+      --muted: #bfb4d9;
+      --border: rgba(239, 234, 253, 0.16);
+      --soft: rgba(167, 139, 250, 0.10);
+  
+      --link: #c4b5fd;
+      --link-visited: #a78bfa;
+  
+      --shadow: 0 16px 34px rgba(0,0,0,.45);
+      --shadow-sm: 0 12px 26px rgba(0,0,0,.35);
+  
+      --info-bg: rgba(196, 181, 253, 0.10);
+      --warn-bg: rgba(251, 146, 60, 0.14);
+      --idea-bg: rgba(134, 239, 172, 0.12);
+  
+      --code-bg: rgba(239, 234, 253, 0.08);
+      --code-border: rgba(239, 234, 253, 0.14);
+    }
+  }

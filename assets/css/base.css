@@ -1,0 +1,63 @@
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text);
+  line-height: var(--lh);
+  color: var(--text-color);
+  background:
+    radial-gradient(900px 420px at 15% -10%,
+      color-mix(in oklab, var(--accent-1) 22%, transparent), transparent 55%),
+    radial-gradient(700px 380px at 95% 0%,
+      color-mix(in oklab, var(--accent-2) 18%, transparent), transparent 55%),
+    var(--bg);
+}
+
+a{ color: var(--link); text-underline-offset: 0.18em; }
+a:visited{ color: var(--link-visited); }
+a:hover{ text-decoration-thickness: 2px; }
+
+a:focus-visible, summary:focus-visible{
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 0.6rem;
+}
+
+.skip-link{
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-sm);
+  z-index: 9999;
+}
+.skip-link:focus{ top: 0.75rem; left: 0.75rem; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior: auto !important; transition: none !important; }
+}
+
+/* Fix: ensure decorative layers never block navigation clicks */
+body::before,
+body::after,
+.site-header::before,
+.site-header::after{
+  pointer-events: none;
+}
+
+/* Fix: ensure header/nav are above any overlays */
+.site-header,
+.brand,
+.site-nav{
+  position: relative;
+  z-index: 10;
+}
+
+.tile::before, .tile::after,
+.path-card::before, .path-card::after{
+  pointer-events: none;
+}

@@ -1,0 +1,221 @@
+/* Cards / panels */
+.panel{
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    background: var(--panel);
+    box-shadow: none;
+  }
+  
+  /* Choose-your-path */
+  .path-panel{
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    background: var(--panel);
+    padding: var(--s4);
+    margin: var(--s4) 0 var(--s5);
+  }
+  
+  .path-panel h2{
+    font-size: var(--h3);
+    margin: 0 0 var(--s3);
+    letter-spacing: -0.01em;
+  }
+  
+  .path-grid{
+    display: grid;
+    gap: var(--s3);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 44rem){
+    .path-grid{ grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  .path-card{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid color-mix(in oklab, var(--border) 80%, var(--accent-1) 20%);
+    border-radius: var(--r-sm);
+    background: color-mix(in oklab, var(--panel) 94%, transparent);
+    padding: var(--s3);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+  }
+  .path-card:hover{
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+    border-color: color-mix(in oklab, var(--border) 55%, var(--accent-1) 45%);
+  }
+  .path-card::after{
+    content:"";
+    position:absolute;
+    inset:-60%;
+    background: radial-gradient(circle at 25% 15%,
+      color-mix(in oklab, var(--accent-1) 20%, transparent),
+      transparent 55%);
+    transform: rotate(12deg);
+    opacity: 0.6;
+    pointer-events:none;
+  }
+  
+  .kicker{
+    font-size: var(--small);
+    color: var(--muted);
+    margin: 0 0 0.25rem;
+  }
+  .path-card h3{
+    font-size: 1.05em;
+    margin: 0 0 0.35rem;
+    letter-spacing: -0.01em;
+  }
+  .path-card p{
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--small);
+    line-height: 1.45;
+  }
+  
+  /* Tiles (for home / index pages) */
+  .tile-grid{
+    display:grid;
+    gap: var(--s3);
+    grid-template-columns: 1fr;
+    margin: var(--s5) 0;
+  }
+  @media (min-width: 44rem){
+    .tile-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 64rem){
+    .tile-grid{ grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  .tile{
+    border: 1px solid color-mix(in oklab, var(--border) 80%, var(--accent-1) 20%);
+    border-radius: var(--r);
+    background: var(--panel);
+    padding: var(--s4);
+    text-decoration:none;
+    color: inherit;
+    display:block;
+    position:relative;
+    overflow:hidden;
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+  }
+  .tile:hover{
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+    border-color: color-mix(in oklab, var(--border) 55%, var(--accent-1) 45%);
+  }
+  .tile::after{
+    content:"";
+    position:absolute;
+    inset:-60%;
+    background: radial-gradient(circle at 25% 15%,
+      color-mix(in oklab, var(--tile-accent, var(--accent-1)) 18%, transparent),
+      transparent 55%);
+    transform: rotate(12deg);
+    opacity: 0.55;
+    pointer-events:none;
+  }
+  .tile .eyebrow{
+    font-size: var(--small);
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+    letter-spacing: 0.01em;
+  }
+  .tile h3{
+    margin: 0 0 0.5rem;
+    font-size: 1.15em;
+    letter-spacing: -0.01em;
+  }
+  .tile p{
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--small);
+    line-height: 1.5;
+  }
+  
+  /* Pills */
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    padding: 0.18rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in oklab, var(--border) 70%, var(--accent-1) 30%);
+    background: color-mix(in oklab, var(--accent-1) 10%, var(--panel) 90%);
+    color: var(--text-color);
+  }
+  .pill[data-kind="experiment"]{ background: color-mix(in oklab, var(--accent-3) 12%, var(--panel) 88%); }
+  .pill[data-kind="build"]{ background: color-mix(in oklab, var(--accent-2) 12%, var(--panel) 88%); }
+  .pill[data-kind="paper"]{ background: color-mix(in oklab, var(--accent-1) 12%, var(--panel) 88%); }
+  .pill[data-kind="life"]{ background: color-mix(in oklab, var(--accent-4) 12%, var(--panel) 88%); }
+  
+  /* Callouts */
+  .callout{
+    border: 1px solid color-mix(in oklab, var(--border) 70%, var(--accent-1) 30%);
+    border-radius: var(--r);
+    padding: var(--s3);
+    background: color-mix(in oklab, var(--panel) 92%, transparent);
+  }
+  .callout > * + *{ margin-top: var(--s2); }
+  .callout-title{
+    font-weight: 750;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .callout.info{ background: color-mix(in oklab, var(--accent-1) 10%, var(--panel) 90%); }
+  .callout.warn{ background: color-mix(in oklab, var(--accent-4) 12%, var(--panel) 88%); }
+  .callout.idea{ background: color-mix(in oklab, var(--accent-3) 10%, var(--panel) 90%); }
+  
+  /* Details */
+  details{
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    background: color-mix(in oklab, var(--panel) 94%, transparent);
+    padding: var(--s2) var(--s3);
+  }
+  details + details{ margin-top: var(--s3); }
+  summary{
+    cursor: pointer;
+    list-style: none;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: var(--s1) 0;
+  }
+  summary::-webkit-details-marker{ display: none; }
+  summary::before{
+    content: "›";
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform 120ms ease;
+    color: var(--muted);
+    font-size: 1.25em;
+    line-height: 1;
+  }
+  details[open] summary::before{ transform: rotate(90deg); }
+  
+  /* Code */
+  pre{
+    margin: 0;
+    padding: var(--s3);
+    border-radius: var(--r);
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    overflow: auto;
+  }
+  code, pre code{
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+  }
+  p code, li code{
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.45rem;
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+  }

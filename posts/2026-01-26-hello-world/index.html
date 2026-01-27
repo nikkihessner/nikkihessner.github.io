@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Hello World — More Than Just Vibes</title>
+  <meta name="description" content="One-sentence summary of the post." />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+
+  <!-- Optional CSP meta fallback (headers are better; keep strict while JS-free) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self'; object-src 'none'; upgrade-insecure-requests;">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="site">
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <a href="/">Your Blog</a>
+        <small>AI experiments · life upgrades · build logs</small>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/now/">Now</a>
+        <a href="/experiments/">Experiments</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+
+    <main id="main" role="main">
+      <article class="content">
+        <header class="post-header">
+          <h1>Hello World: this static html site is vibecoded</h1>
+          <p class="dek">Why I did it and how we got here.</p>
+
+          <div class="meta" aria-label="Post metadata">
+            <span><strong>Status:</strong> running</span>
+            <span><strong>AI involvement:</strong> assisted</span>
+            <span><strong>Reproducible:</strong> yes</span>
+            <span><strong>Time cost:</strong> 1h</span>
+            <span><strong>Updated:</strong> 2026-01-25</span>
+            <span class="pill" data-kind="experiment">🧪 Experiment</span>
+          </div>
+
+          <section class="path-panel" aria-labelledby="choose-path">
+            <h2 id="choose-path">Choose your path</h2>
+            <div class="path-grid">
+              <a class="path-card" href="#lifestyle">
+                <p class="kicker">2–3 min</p>
+                <h3>Lifestyle / Narrative</h3>
+                <p>Story + reflections + what changed in daily life.</p>
+              </a>
+              <a class="path-card" href="#procedural">
+                <p class="kicker">10–15 min</p>
+                <h3>Procedural / Reproducible</h3>
+                <p>Steps, prompts, and failure modes so you can copy it.</p>
+              </a>
+            </div>
+          </section>
+        </header>
+
+        <!-- anchors required for :target -->
+        <span id="lifestyle" class="mode-anchor" aria-hidden="true"></span>
+        <span id="procedural" class="mode-anchor" aria-hidden="true"></span>
+        <span id="paper" class="mode-anchor" aria-hidden="true"></span>
+
+        <section class="mode-switch" aria-label="Post reading modes">
+          <nav class="mode-tabs" aria-label="Reading mode tabs">
+            <a class="default-selected" href="#lifestyle">Lifestyle</a>
+            <a href="#procedural">Procedural</a>
+            <a href="#paper">Paper</a>
+          </nav>
+
+          <section class="mode mode-lifestyle is-default" aria-label="Lifestyle mode">
+            <div class="prose">
+              <h2>What I was trying to fix</h2>
+              <p>I've been in the middle of a career transition for a long time. It's been long enough that I'm not even sure if that's disingenuous to say.
+                But, in the name of the long tail of trying, I finally decided that what I needed was an outlet of my own. Since the release of ChatGPT-3.5, I have been experimenting relentlessly with generative AI from the user side.
+                I have a Masters of Science of Computer Science that gives me the theoretical background to be able to do more than just explore from the user side, and I wanted a place to share my thoughts and my skills while I'm still finding...whatever it is 
+                I'm missing...to join the workforce properly.</p>
+
+              <p>So, I did the thing that everyone has been recommending since the 90s and built a website.</p>
+
+              <p>However, I have the frontend skills of a sad fish, I'm terrified of JavaScript by way of being thrown into React with absolutely zero web design experience and listening to an excessive amount of hack0r music, so...vibecoded static html blog it is.</p>
+                
+              <p>DISCLAIMER: My general philosophy when using generative AI is that it is best used to <strong>learn</strong> new skills, rather than pure copy and paste slop. But sometimes, it's genuinely just about doing something. And that's okay. This time, I needed a container for my organic human thoughts more than I needed to immediately develop my frontend skills.</p> 
+
+              <p>Just be honest about what you're trying to do. </p>
+
+              <div class="callout idea" role="note">
+                <p class="callout-title">Key idea</p>
+                <p>Prompt for security * Prompt for design principles * Prompt for style</p>
+              </div>
+
+              <details>
+                <summary>Show the exact prompt I used</summary>
+                <pre><code>…</code></pre>
+              </details>
+            </div>
+      </article>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <p>© 2026 Nicole Hessner · <a href="/privacy/">Privacy</a></p>
+      <p>JS-free by default. If you find an issue, open a PR or email me.</p>
+    </footer>
+  </div>
+</body>
+</html>

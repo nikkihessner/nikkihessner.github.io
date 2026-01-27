@@ -1,0 +1,68 @@
+/* Mode tabs */
+.mode-tabs{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 0 0 var(--s4);
+  }
+  .mode-tabs a{
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    color: var(--muted);
+    background: color-mix(in oklab, var(--panel) 92%, transparent);
+  }
+  .mode-tabs a:hover{
+    color: var(--text-color);
+    background: color-mix(in oklab, var(--soft) 60%, transparent);
+  }
+  
+  /* Hidden anchors for :target */
+  .mode-anchor{
+    position: relative;
+    top: -1rem;
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  /* Default shown */
+  .mode{ display: none; }
+  .mode.is-default{ display: block; }
+  
+  /* If any mode is targeted, hide default */
+  #lifestyle:target ~ .mode-switch .mode.is-default,
+  #procedural:target ~ .mode-switch .mode.is-default,
+  #paper:target ~ .mode-switch .mode.is-default{ display: none; }
+  
+  #lifestyle:target ~ .mode-switch .mode.mode-lifestyle{ display: block; }
+  #procedural:target ~ .mode-switch .mode.mode-procedural{ display: block; }
+  #paper:target ~ .mode-switch .mode.mode-paper{ display: block; }
+  
+  /* Active tab highlight */
+  #lifestyle:target ~ .mode-switch .mode-tabs a[href="#lifestyle"],
+  #procedural:target ~ .mode-switch .mode-tabs a[href="#procedural"],
+  #paper:target ~ .mode-switch .mode-tabs a[href="#paper"]{
+    color: var(--text-color);
+    border-color: color-mix(in oklab, var(--border) 55%, var(--accent-1) 45%);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* Default selected look when no hash */
+  .mode-tabs a.default-selected{
+    color: var(--text-color);
+    border-color: color-mix(in oklab, var(--border) 60%, var(--accent-1) 40%);
+  }
+  
+  /* Paper mode touches */
+  .mode-paper .paper-meta{
+    display: grid;
+    gap: 0.25rem;
+    padding: var(--s3);
+    border: 1px dashed var(--border);
+    border-radius: var(--r);
+    background: color-mix(in oklab, var(--panel) 94%, transparent);
+  }
+  .mode-paper .paper-meta span{ color: var(--muted); font-size: var(--small); }
+  .mode-paper .refs ol{ padding-left: 1.25rem; }
